@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded());
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3001" }));
+app.use(cors({ origin: process.env.CLIENT_ORIGIN }));
 app.use("/api/notes", notesRouter);
 
 app.get("/", (req, res) => {
